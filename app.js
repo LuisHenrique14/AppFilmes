@@ -1,9 +1,10 @@
-let btn = document.querySelector('button#btn')
-let btn2 = document.querySelector('button#btn1')
+let btn1 = document.querySelector('button#btn1')
+let btn2 = document.querySelector('button#btn2')
+
 let spans = document.querySelector('span')
 let filmes = []
 
-btn.onclick = function(){
+btn1.onclick = function(){
     let textElement = '';
 
     let inputValue = document.querySelector('input').value;
@@ -35,5 +36,7 @@ btn2.onclick = function(){
     console.log(numero)
     spans.innerHTML = filmes[numero]
 }
+
+
 
 
