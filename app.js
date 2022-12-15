@@ -1,20 +1,39 @@
-let spans = document.getElementsByTagName('span')
-
-let filmes = []
-let btn1 = document.querySelector('button.btn')
+let btn = document.querySelector('button#btn')
 let btn2 = document.querySelector('button#btn1')
+let spans = document.querySelector('span')
+let filmes = []
 
-let inp = document.querySelector('input[name=produto]')
+btn.onclick = function(){
+    let textElement = '';
 
-btn1.onclick = function(){    
-    filmes.push(inp.value)
-    console.log(filmes)
-    spans[0].innerHTML = filmes
-    lista = JSON.stringify(filmes)  
+    let inputValue = document.querySelector('input').value;
+
+    let pElement = document.createElement('h6');
+    
+    pElement.setAttribute('class', 'classe-p');
+
+    if(inputValue !== ""){
+        textElement = document.createTextNode(inputValue);
+        filmes.push(inputValue);
+    }else{
+        textElement = document.createTextNode("Vaziooooo...");
+        alert('iiiiiih! Para adicionar um filme você precisa escreve o nome do filme. Tente novamente')
+    }
+
+    pElement.appendChild(textElement);
+
+    let divElement = document.querySelector('#app');
+
+    divElement.appendChild(pElement);
+
+    document.querySelector('input').value = "";    
+
 }
 
 btn2.onclick = function(){    
     const numero = Math.floor((Math.random())* filmes.length)
     console.log(numero)
-    spans[1].innerHTML = filmes[numero]
+    spans.innerHTML = filmes[numero]
 }
+
+
