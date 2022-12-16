@@ -1,15 +1,11 @@
-let btn18 = document.querySelector('button#btn18')
-let btn19 = document.querySelector('button#btn19')
-
+let btn20 = document.querySelector('button#btn20')
+let btn21 = document.querySelector('button#btn21')
 let spans = document.querySelector('span')
 
-let listaAventura = []
-
-
-btn19.onclick = function(){
-    listaAventura = ["O homem do norte", "Batman", "Free Guy", "Jurassic World", "Indiana Jones"]
+btn20.onclick = function(){
+    listaAcao = ["Top Gun - Mavericks","Top Gun - Asas Indomáveis", "Bad Boy 3", "Velozes e Furiosos", "Rambo", "Alerta Vermelho", "Gladiador"]
     
-    for (let i = 0; i < listaAventura.length; i++) {
+    for (let i = 0; i < listaAcao.length; i++) {
         //console.log(listaAventura[i])
         let textElement = '';
 
@@ -17,8 +13,8 @@ btn19.onclick = function(){
         
         pElement.setAttribute('class', 'classe-p');
 
-        if(listaAventura !== ""){
-            textElement = document.createTextNode(listaAventura[i]);
+        if(listaAcao !== ""){
+            textElement = document.createTextNode(listaAcao[i]);
         }else{
             textElement = document.createTextNode("Algo Inesperado");
             alert('iiiiiih! Aconteceu algo inesperado! Tente novamente')
@@ -32,10 +28,8 @@ btn19.onclick = function(){
     }
 }
 
-btn18.onclick = function(){    
-    const numero = Math.floor((Math.random())* listaAventura.length)
+btn21.onclick = function(){    
+    const numero = Math.floor((Math.random())* listaAcao.length)
     console.log(numero)
-    spans.innerHTML = listaAventura[numero]
+    spans.innerHTML = listaAcao[numero]
 }
-
-

@@ -1,7 +1,7 @@
 let btn1 = document.querySelector('button#btn1')
 let btn2 = document.querySelector('button#btn2')
 
-let spans = document.querySelector('span')
+let spans = document.querySelector('span#resposta')
 let filmes = []
 
 btn1.onclick = function(){
@@ -31,7 +31,8 @@ btn1.onclick = function(){
 
 }
 
-btn2.onclick = function(){    
+btn2.onclick = function(){ 
+    console.log(filmes)   
     const numero = Math.floor((Math.random())* filmes.length)
     console.log(numero)
     spans.innerHTML = filmes[numero]
