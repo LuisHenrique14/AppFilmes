@@ -18,9 +18,28 @@
             </p>
             <div class="text-center">
             <div class="gcse-search"></div>
-            <iframe id="player" type="text/html" width="640" height="360"
-            src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=https://www.youtube.com/watch?v=7qMls5yxP1w&list=RD7qMls5yxP1w&start_radio=1"
-            frameborder="2"></iframe>
+            <div id="ytapiplayer">
+                You need Flash player 8+ and JavaScript enabled to view this video.
+            </div>
+        
+            <script type="text/javascript">
+                /* ****************************************** */
+                //ATENÇÃO: Esse código não funciona se você abrir a página no browser de um arquivo local, precisa acessar o arquivo de algum servidor, por exemplo IIS
+                /* ****************************************** */
+        
+                var videoID = 's7MHXDEdjS0'; // ---> ALTERAR PARA O ID DO SEU VIDEO
+        
+                var params = { allowScriptAccess: "always" };
+                var atts = { id: "myytplayer" };
+                swfobject.embedSWF("https://www.youtube.com/v/" + videoID + "?enablejsapi=1&playerapiid=ytplayer&version=3",
+                                   "ytapiplayer", "1280", "720", "8", null, null, params, atts);
+        
+                function onYouTubePlayerReady(playerId) {
+                    var player = document.getElementById("myytplayer");
+                    player.setPlaybackQuality('hd1080');
+                    //player.playVideo();
+                }
+              </script>
             <p>Está com dúvida na hora de escolher um filme? Podemos te ajudar.</p> 
             <p>Adicione filmes que fazemos a escolha para você! De forma aleatória</p>
             <p>Caso queira algo mais direcionado, pode optar por nossas <a href="./pag2.html">listas prontas</a> de filmes.</p>
