@@ -4,7 +4,7 @@
         <title>Escolhendo um filme</title>
         <meta charset="utf-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
     </head>
     <body>
         <div class="container">
@@ -46,32 +46,6 @@
         <script async src="https://cse.google.com/cse.js?cx=951cd726a390e4898">
         </script>   
         
-        <script>
-
-            function googleApiClientReady() {
-            
-                var apiKey = 'AIzaSyDj1NXFPYqWfhirEHnFQyWkTeYu8rKQ8FA';
-            
-                gapi.client.setApiKey(apiKey);
-                gapi.client.load('youtube', 'v3', function() {
-            
-                    request = gapi.client.youtube.search.list({
-                        part: 'snippet',
-                        channelId: 'UCqhNRDQE_fqBDBwsvmT8cTg',
-                        order: 'date',
-                        type: 'video'
-            
-                    });
-            
-                    request.execute(function(response) {
-                            console.log(response);
-            
-                    });
-                });
-            
-            }
-              </script>
-                <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
 
         <script src="app.js"></script>
     </body>
