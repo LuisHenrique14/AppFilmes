@@ -44,7 +44,34 @@
         </div>
         
         <script async src="https://cse.google.com/cse.js?cx=951cd726a390e4898">
-        </script>      
+        </script>   
+        
+        <script>
+
+            function googleApiClientReady() {
+            
+                var apiKey = 'your api key';
+            
+                gapi.client.setApiKey(apiKey);
+                gapi.client.load('youtube', 'v3', function() {
+            
+                    request = gapi.client.youtube.search.list({
+                        part: 'snippet',
+                        channelId: 'UCqhNRDQE_fqBDBwsvmT8cTg',
+                        order: 'date',
+                        type: 'video'
+            
+                    });
+            
+                    request.execute(function(response) {
+                            console.log(response);
+            
+                    });
+                });
+            
+            }
+              </script>
+                <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
 
         <script src="app.js"></script>
     </body>
