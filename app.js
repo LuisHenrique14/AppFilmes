@@ -47,7 +47,7 @@ btn1.onclick = function(){
     let txtResumo = ''
     
 
-    let filme = document.querySelector('input[name="nome"]').value
+    // let filme = document.querySelector('input[name="nome"]').value
     
 
     axios.get(`https://www.omdbapi.com/?t=${inputValue}&apikey=9d5444c3`)
@@ -81,11 +81,9 @@ btn1.onclick = function(){
             div.appendChild(spanDiretor)
             div.appendChild(spanAtores)
             div.appendChild(spanResumo)
-
-            filme.innerHTML = ''
         })
 
-    axios.get(`http://img.omdbapi.com/?t=${filme}apikey=9d5444c3&`)
+    axios.get(`http://img.omdbapi.com/?t=${inputValue}apikey=9d5444c3&`)
 
 }
 
@@ -96,7 +94,7 @@ btn2.onclick = function(){
     spans.innerHTML = filmes[numero]
 }
 
-let btn3 = document.querySelector('#btn3')
+
 
 let div = document.querySelector('#app1')
 
