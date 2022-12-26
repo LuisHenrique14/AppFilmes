@@ -47,7 +47,7 @@ btn1.onclick = function(){
     let txtResumo = ''
     
 
-    let filme = document.querySelector('input[name=filme_user]').value
+    let filme = document.querySelector('input[name="nome"]').value
     
 
     axios.get(`https://www.omdbapi.com/?t=${inputValue}&apikey=9d5444c3`)
