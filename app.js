@@ -17,13 +17,13 @@ btn1.onclick = function(){
         textElement = document.createTextNode(inputValue);
         filmes.push(inputValue);
     }else{
-        textElement = document.createTextNode("Vaziooooo...");
+        // textElement = document.createTextNode("Vaziooooo...");
         alert('iiiiiih! Para adicionar um filme você precisa escreve o nome do filme. Tente novamente')
     }
 
     pElement.appendChild(textElement);
 
-    let divElement = document.querySelector('#app');
+    let divElement = document.querySelector('#app2');
 
     divElement.appendChild(pElement);
 
@@ -37,6 +37,7 @@ btn1.onclick = function(){
     let spanDiretor = document.createElement('li')
     let spanAtores = document.createElement('li')
     let spanResumo = document.createElement('li')
+    let spanNota = document.createElement('li')
 
 
     let txtTitulo = ''
@@ -45,9 +46,7 @@ btn1.onclick = function(){
     let txtDiretor = ''
     let txtAtores = ''
     let txtResumo = ''
-    
-
-    // let filme = document.querySelector('input[name="nome"]').value
+    let txtNota = ''
     
 
     axios.get(`https://www.omdbapi.com/?t=${inputValue}&apikey=9d5444c3`)
@@ -59,6 +58,7 @@ btn1.onclick = function(){
                 txtDiretor = document.createTextNode('Diretor: ' + response.data.Director)
                 txtAtores = document.createTextNode('Atores: ' + response.data.Actors)
                 txtResumo = document.createTextNode('Sinopse: ' + response.data.Plot)
+                txtNota = document.createTextNode('Rating: ' + JSON.stringify(response.data.Ratings[1]))
                 let img = document.createElement('img')
                 img.setAttribute('src', response.data.Poster)
                 img.setAttribute('alt', response.data.Title)
@@ -75,12 +75,14 @@ btn1.onclick = function(){
             spanDiretor.appendChild(txtDiretor)
             spanAtores.appendChild(txtAtores)
             spanResumo.appendChild(txtResumo)
+            spanNota.appendChild(txtNota)
             div.appendChild(spanTitulo)
             div.appendChild(spanAno)
             div.appendChild(spanGenero)
             div.appendChild(spanDiretor)
             div.appendChild(spanAtores)
             div.appendChild(spanResumo)
+            div.appendChild(spanNota)
         })
 
     axios.get(`http://img.omdbapi.com/?t=${inputValue}apikey=9d5444c3&`)
@@ -93,8 +95,6 @@ btn2.onclick = function(){
     console.log(numero)
     spans.innerHTML = filmes[numero]
 }
-
-
 
 let div = document.querySelector('#app1')
 
