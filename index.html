@@ -57,5 +57,18 @@
         
 
         <script src="app.js"></script>
+        <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+</script>
+<script>
+    (function () {
+        window.onload = function () {
+            new BlipChat()
+            .withAppKey('cm91dGVyNDIzOjQyZDE1YmIyLTVmNmYtNDk3Ni1iMzE4LTI2ZTE0ZjNiZmRiYQ==')
+            .withButton({"color":"#2CC3D5","icon":"https://blipmediastore.blob.core.windows.net/public-medias/Media_3119c929-4f6a-4d85-a4cd-91559059288b"})
+            .withCustomCommonUrl('https://hintz-cosmetics.chat.blip.ai/')
+            .build();
+        }
+    })();
+</script>
     </body>
 </html>
